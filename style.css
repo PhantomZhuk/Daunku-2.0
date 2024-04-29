@@ -1,0 +1,1141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+.cartPopup {
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  color: #333;
+  transition: 1s;
+  z-index: 3;
+}
+.cartPopup .cartHeader {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+  font-size: 32px;
+}
+.cartPopup .cartHeader i {
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cartPopup .cartPopupContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+  padding: 0 10px;
+}
+.cartPopup .cartPopupContainer .cart {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #c1d0e4;
+  margin: 20px;
+  padding: 0 0 0 10px;
+}
+.cartPopup .cartPopupContainer .cart .cartInfo {
+  width: 65%;
+  background-color: #fff;
+  height: 150px;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+.cartPopup .cartPopupContainer .cart .cartInfo i {
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cartPopup .cartPopupContainer .cart .cartInfo .fa-trash-can {
+  align-self: flex-end;
+}
+.cartPopup .cartPopupContainer .cart img {
+  height: 120px;
+}
+.cartPopup .cartPopupContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  padding: 0 120px;
+}
+
+.price svg {
+  width: 205px;
+  height: 115.744px;
+}
+
+.secondPage {
+  padding: 0 120px;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+}
+.wrap .homePage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .homePage .header {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .homePage .header .logo {
+  display: flex;
+  align-items: center;
+}
+.wrap .homePage .header .logo h2 {
+  margin-left: 3px;
+  color: #FFF;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.wrap .homePage .header .nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.wrap .homePage .header .nav ul li {
+  margin-right: 70px;
+}
+.wrap .homePage .header .nav ul li .gredient a {
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wrap .homePage .header .nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .homePage .header .nav i {
+  color: #fff;
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.wrap .homePage .header .buy i {
+  font-size: 21px;
+  color: #FFF;
+  cursor: pointer;
+}
+.wrap .homePage .header .buy i a {
+  text-decoration: none;
+}
+.wrap .homePage .header .buy .colo {
+  position: absolute;
+  right: 109px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .homePage .header .buy .colo p {
+  color: #2D3949;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 1px;
+}
+.wrap .homePage .container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .homePage .container img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+.wrap .homePage .container .leftblock {
+  width: 15%;
+  height: 90vh;
+}
+.wrap .homePage .container .leftblock .lap1 {
+  position: relative;
+  left: 93px;
+  top: 190px;
+  display: none;
+}
+.wrap .homePage .container .leftblock .lap2 {
+  position: relative;
+  left: 148px;
+  top: 260px;
+  display: none;
+}
+.wrap .homePage .container .centerblock {
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 300px;
+}
+.wrap .homePage .container .centerblock h1 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: calc(50px + 0.5vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0 60px;
+}
+.wrap .homePage .container .centerblock p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: calc(10px + 0.5vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 36px */
+}
+.wrap .homePage .container .centerblock .poshuk input {
+  display: flex;
+  width: 463px;
+  padding: 15px 24px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 50px;
+  border: 1px solid #FFF;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.wrap .homePage .container .centerblock .poshuk input::-moz-placeholder {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .homePage .container .centerblock .poshuk input::placeholder {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .homePage .container .centerblock .poshuk .search {
+  position: relative;
+  bottom: 44px;
+  left: 418px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  color: #fff;
+  cursor: pointer;
+}
+.wrap .homePage .container .rightblock {
+  width: 15%;
+  height: 90vh;
+}
+.wrap .homePage .container .rightblock .lap3 {
+  position: absolute;
+  right: 100px;
+  top: 400px;
+  display: none;
+}
+.wrap .homePage .container .rightblock .price {
+  display: none;
+}
+.wrap .homePage .container .rightblock .price svg {
+  width: 205px;
+  height: 115.744px;
+  position: absolute;
+  right: 20px;
+  top: 270px;
+}
+.wrap .homePage .container .rightblock .price .text {
+  width: 150px;
+  height: 70px;
+  position: relative;
+  right: -15px;
+  top: 210px;
+}
+.wrap .homePage .container .rightblock .price .text h3 {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(24px + 0.5vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.wrap .homePage .container .rightblock .price .text p {
+  margin-top: 10px;
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(10px + 0.5vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.wrap .secondPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .advantages {
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .advantages .freeshopping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .advantages .freeshopping svg {
+  width: 60px;
+}
+.wrap .secondPage .advantages .freeshopping .text h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .advantages .freeshopping .text p {
+  color: var(--Gray-3, #828282);
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .advantages .quickpayment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .advantages .quickpayment svg {
+  width: 60px;
+}
+.wrap .secondPage .advantages .quickpayment .text h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .advantages .quickpayment .text p {
+  color: var(--Gray-3, #828282);
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .advantages .support {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .advantages .support svg {
+  width: 60px;
+}
+.wrap .secondPage .advantages .support .text h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .advantages .support .text p {
+  color: var(--Gray-3, #828282);
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .flowers {
+  width: 100%;
+  min-height: 60vh;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .flowers .textblock {
+  width: 20%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrap .secondPage .flowers .textblock h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: calc(28px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .secondPage .flowers .textblock p {
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+.wrap .secondPage .flowers .flowerblock {
+  max-width: 900px;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .flowers .flowerblock .plantItem {
+  width: 300px;
+  min-height: 200px;
+  background-color: #C1D0E4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50px;
+  margin: 10px;
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo {
+  width: 100%;
+  background-color: #fff;
+  height: 200px;
+  position: relative;
+  top: 40px;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px #eee;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo h3 {
+  font-size: calc(13px + 0.8vw);
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo .plangItemGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo .plangItemGroup p {
+  font-size: calc(12px + 0.8vw);
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo .plangItemGroup button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .secondPage .flowers .flowerblock .plantItemInfo .plangItemGroup button svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.wrap .secondPage .flowers .flowerblock .plantItem img {
+  height: 200px;
+}
+.wrap .threethPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+}
+.wrap .threethPage .textblock {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.wrap .threethPage .textblock h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+.wrap .threethPage .textblock p {
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+.wrap .threethPage .photoblock {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.wrap .threethPage .photoblock .leftblock {
+  width: 49%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .threethPage .photoblock .leftblock .imgblock1 {
+  width: 100%;
+  height: 39vh;
+  background-image: url(./img/brown-sofa-wooden-table-living-room-interior-with-plant-concrete-wall.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  background-color: red;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(50%);
+}
+.wrap .threethPage .photoblock .leftblock .imgblock1 p {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(32px + 0.8vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  filter: none;
+}
+.wrap .threethPage .photoblock .leftblock .imgblock2 {
+  width: 100%;
+  height: 39vh;
+  background-image: url(./img/high-angle-desk-arrangement-with-plants.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  background-color: blue;
+}
+.wrap .threethPage .photoblock .rightblock {
+  width: 49%;
+  max-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .threethPage .photoblock .rightblock .imgblock3 {
+  width: 100%;
+  height: 80vh;
+  background-image: url(./img/unsplash_MBsReSZ2WNM.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  background-color: green;
+}
+.wrap .fourthPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+}
+.wrap .fourthPage .leftblock {
+  width: 50%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .fourthPage .leftblock .text {
+  width: 100%;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.wrap .fourthPage .leftblock .text h2 {
+  color: var(--font, #081323);
+  font-family: "Work Sans";
+  font-size: calc(32px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .fourthPage .leftblock .text p {
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .fourthPage .leftblock .mainblock {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .fourthPage .leftblock .mainblock .block {
+  width: 100%;
+  height: 12.4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .fourthPage .leftblock .mainblock .block .leftblock {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.wrap .fourthPage .leftblock .mainblock .block .textblock {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.wrap .fourthPage .leftblock .mainblock .block .textblock h2 {
+  color: #000;
+  font-family: "Work Sans";
+  font-size: calc(16px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .fourthPage .leftblock .mainblock .block .textblock p {
+  color: var(--Gray-2, #4F4F4F);
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.6vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .fourthPage .rightblock {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .fourthPage .rightblock .photoblock {
+  width: 90%;
+  height: 90%;
+  background-image: url(./img/unsplash_sEApBUS4fIk.png);
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+}
+.wrap .footer {
+  width: 100%;
+  min-height: 60vh;
+  background-color: #4b5766;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+.wrap .footer .topblock {
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .footer .topblock .leftblock {
+  width: 25%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+.wrap .footer .topblock .leftblock h2 {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(24px + 0.8vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrap .footer .topblock .leftblock .inputblock input {
+  display: flex;
+  width: 100%;
+  padding: 14px 20px;
+  align-items: flex-start;
+  border-radius: 50px;
+  border: 1px solid #FFF;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.wrap .footer .topblock .leftblock .inputblock input::-moz-placeholder {
+  color: #FFF;
+  font-family: Work Sans;
+  font-size: calc(6px + 0.5vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .footer .topblock .leftblock .inputblock input::placeholder {
+  color: #FFF;
+  font-family: Work Sans;
+  font-size: calc(6px + 0.5vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrap .footer .topblock .leftblock .inputblock button {
+  position: relative;
+  z-index: 2;
+  min-width: 100px;
+  min-height: 46px;
+  border-radius: 50px;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  border: none;
+  bottom: 46px;
+  left: 225px;
+}
+.wrap .footer .topblock .leftblock .inputblock button p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: calc(6px + 0.6vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  top: 100px;
+}
+.wrap .footer .topblock .rightblock {
+  width: 70%;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .footer .topblock .rightblock .textblock {
+  width: 23%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 50px;
+}
+.wrap .footer .topblock .rightblock .textblock h2 {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  /* 33.6px */
+}
+.wrap .footer .topblock .rightblock .textblock a {
+  color: #FFF;
+  text-decoration: none;
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+}
+.wrap .footer .topblock .rightblock .textblock1 {
+  width: 23%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 100px;
+}
+.wrap .footer .topblock .rightblock .textblock1 h2 {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  /* 33.6px */
+}
+.wrap .footer .topblock .rightblock .textblock1 a {
+  color: #FFF;
+  text-decoration: none;
+  font-family: "Work Sans";
+  font-size: calc(8px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+}
+.wrap .footer .topblock .rightblock .twxtblock2 {
+  width: 30%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 100px;
+}
+.wrap .footer .topblock .rightblock .twxtblock2 h2 {
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(12px + 0.8vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  /* 33.6px */
+}
+.wrap .footer .topblock .rightblock .twxtblock2 a {
+  color: #FFF;
+  text-decoration: none;
+  font-family: "Work Sans";
+  font-size: calc(7px + 0.5vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+}
+.wrap .footer hr {
+  width: 100%;
+  background-color: #fff;
+}
+.wrap .footer .bottomblock {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.wrap .footer .bottomblock p {
+  margin-top: 20px;
+  color: #FFF;
+  font-family: "Work Sans";
+  font-size: calc(10px + 0.7vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1300px) {
+  .leftblock .lap1 {
+    margin-left: -25px;
+  }
+  .leftblock .lap2 {
+    margin-left: -30px;
+  }
+  .text {
+    left: -20px;
+  }
+  .secondPage {
+    padding: 0 30px;
+  }
+  .wrap .footer .topblock .leftblock .inputblock button {
+    left: 175px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .flowers {
+    flex-direction: column;
+  }
+  .wrap .secondPage .flowers .textblock {
+    width: 100%;
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrap .secondPage .flowers .flowerblock .block .fonblock {
+    top: 1140px;
+  }
+  .wrap .threethPage {
+    padding: 0 20px;
+  }
+  .wrap .fourthPage {
+    padding: 0 20px;
+  }
+  .wrap .footer {
+    padding: 100px 20px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .header {
+    padding: 0 30px;
+  }
+  .header .colo {
+    margin-top: 15px;
+    margin-right: -90px;
+  }
+  .leftblock .lap1 {
+    margin-left: -35px;
+  }
+  .leftblock .lap2 {
+    margin-left: -55px;
+  }
+  .rightblock .lap3 {
+    margin-right: -25px;
+  }
+  .rightblock .price svg {
+    margin-right: -20px;
+  }
+  .rightblock .price .text {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .wrap .homePage .container .centerblock {
+    width: 100%;
+    padding-bottom: 350px;
+  }
+  .wrap .homePage .container .centerblock h1 {
+    padding: 0 100px;
+  }
+  .wrap .homePage .container .leftblock {
+    display: none;
+  }
+  .wrap .homePage .container .rightblock {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .wrap .footer .topblock .leftblock .inputblock button {
+    left: 140px;
+  }
+}
+@media screen and (max-width: 930px) {
+  .wrap .secondPage .advantages {
+    flex-direction: column;
+  }
+  .wrap .secondPage .flowers .flowerblock {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrap .secondPage .flowers .flowerblock .plantItem {
+    margin-bottom: 50px;
+  }
+  .wrap .secondPage .flowers .flowerblock .block {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrap .homePage .header .logo {
+    order: 1;
+  }
+  .wrap .homePage .header .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .homePage .header .nav ul {
+    display: none;
+  }
+  .wrap .homePage .header .nav i {
+    display: flex;
+    order: 3;
+  }
+  .wrap .homePage .header .buy {
+    order: 2;
+  }
+  .wrap .homePage .header .buy .colo {
+    margin-top: -5px;
+  }
+  .wrap .homePage .container .centerblock h1 {
+    padding: 0 10px;
+  }
+  .wrap .homePage .container .centerblock p {
+    padding: 0 50px;
+  }
+  .wrap .homePage .container .centerblock .poshuk input {
+    width: 400px;
+  }
+  .wrap .homePage .container .centerblock .poshuk .search {
+    margin-left: -63px;
+  }
+  .wrap .secondPage {
+    padding: 0;
+  }
+  .wrap .threethPage .photoblock {
+    flex-direction: column;
+  }
+  .wrap .threethPage .photoblock .leftblock {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+  .wrap .threethPage .photoblock .rightblock {
+    width: 100%;
+  }
+  .wrap .footer {
+    padding: 20px;
+  }
+  .wrap .footer .topblock {
+    flex-direction: column;
+  }
+  .wrap .footer .topblock .leftblock {
+    width: 80%;
+    align-items: center;
+  }
+  .wrap .footer .topblock .leftblock h2 {
+    text-align: center;
+  }
+  .wrap .footer .topblock .leftblock .inputblock input {
+    width: 400px;
+  }
+  .wrap .footer .topblock .leftblock .inputblock input::-moz-placeholder {
+    font-size: calc(10px + 0.7vw);
+  }
+  .wrap .footer .topblock .leftblock .inputblock input::placeholder {
+    font-size: calc(10px + 0.7vw);
+  }
+  .wrap .footer .topblock .leftblock .inputblock button {
+    left: 300px;
+  }
+  .wrap .footer .topblock .rightblock {
+    width: 100%;
+  }
+  .wrap .footer .topblock .rightblock .textblock {
+    padding-bottom: 120px;
+  }
+  .wrap .footer .topblock .rightblock .textblock1 {
+    padding-bottom: 150px;
+  }
+  .wrap .footer .topblock .rightblock .textblock2 {
+    padding-bottom: 200px;
+  }
+  .wrap .footer hr {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .wrap .threethPage .photoblock .leftblock {
+    margin-top: 100px;
+  }
+  .wrap .fourthPage {
+    padding: 40px 0;
+    flex-direction: column;
+  }
+  .wrap .fourthPage .leftblock {
+    width: 100%;
+  }
+  .wrap .fourthPage .leftblock .text {
+    align-items: center;
+  }
+  .wrap .fourthPage .leftblock .mainblock .block .textblock {
+    justify-content: center;
+  }
+  .wrap .fourthPage .rightblock {
+    width: 100%;
+  }
+  .wrap .fourthPage .rightblock .photoblock {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrap .homePage .container .centerblock .poshuk input {
+    width: 300px;
+  }
+  .wrap .homePage .container .centerblock .poshuk .search {
+    margin-left: -162px;
+  }
+  .wrap .threethPage .photoblock .leftblock {
+    margin-top: 260px;
+    margin-bottom: 60px;
+  }
+  .wrap .footer .topblock .leftblock .inputblock input {
+    width: 300px;
+  }
+  .wrap .footer .topblock .leftblock .inputblock button {
+    left: 200px;
+  }
+}/*# sourceMappingURL=style.css.map */
