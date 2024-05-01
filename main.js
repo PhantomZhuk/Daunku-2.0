@@ -56,28 +56,36 @@ $('.wrap').click((e) => {
     let target = (e.target.id).substring(0, 3);
     if (target === 'add') {
         let ID = (e.target.id).substring(3);
-        for (let el of db) {
-            if (ID == el.id) {
-                cartList.push(el);
-            }
+        let existingItemIndex = cartList.findIndex(item => item.id === parseInt(ID));
+        if (existingItemIndex !== -1) {
+            // Якщо товар вже є у кошику, збільшуємо кількість
+            cartList[existingItemIndex].quantity++;
+        } else {
+            // Якщо товару немає у кошику, додаємо його
+            let newItem = { ...db.find(item => item.id === parseInt(ID)), quantity: 1 };
+            cartList.push(newItem);
         }
+        updateCart();
     }
-    localStorage.setItem('cartList', JSON.stringify(cartList));
-    $('.counter').text(JSON.parse(localStorage.getItem('cartList')).length);
-    $('.cartPopupContainer').empty();
-    showCartList(cartList);
-})
-
+});
 
 function showCartList(cartList) {
     for (let el of cartList) {
+        let quantityClass = `numberFlower${el.id}`;
         $('.cartPopupContainer').append(
             `
             <div class="cart">
                 <img src='./img/${el.pic}' alt='plant'>
                 <div class="cartInfo">
                     <h3>${el.name}</h3>
-                    <i class="fa-solid fa-trash-can" id="delete${el.id}"></i>
+                    <div class="numberFlowerContainer">
+                        <div class="numberFlowerBox">
+                            <i class="fa-solid fa-plus plus${el.id}"></i>
+                            <p class="${quantityClass}">${el.quantity}</p>
+                            <i class="fa-solid fa-minus minus${el.id}"></i>
+                        </div>
+                        <i class="fa-solid fa-trash-can" id="delete${el.id}"></i>
+                    </div>
                 </div>
             </div>
             `
@@ -85,7 +93,6 @@ function showCartList(cartList) {
     }
 }
 showCartList(cartList);
-
 $(`.buy`).click(() => {
     $(`.cartPopup`).css(`right`, `0`)
     $('.cartPopupContainer').empty();
@@ -219,3 +226,40 @@ $(`#home`).click(() => {
     $(`.menuPopup`).css(`left`, `-100%`);
     $(`.wrap`).show();
 });
+
+function updateCart() {
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+    $('.counter').text(cartList.reduce((acc, cur) => acc + cur.quantity, 0));
+    $('.cartPopupContainer').empty();
+    showCartList(cartList);
+}
+
+$('.cartPopupContainer').on('click', '.fa-plus', (e) => {
+    let ID = $(e.target).closest('.cart').find('.fa-trash-can').attr('id').replace('delete', '');
+    console.log("ID:", ID);
+    let itemIndex = cartList.findIndex(item => item.id == ID);
+    if (itemIndex !== -1) {
+        cartList[itemIndex].quantity += 1;
+        updateCart();
+        updateQuantityDisplay(ID, cartList[itemIndex].quantity);
+    }
+});
+
+$('.cartPopupContainer').on('click', '.fa-minus', (e) => {
+    let ID = $(e.target).closest('.cart').find('.fa-trash-can').attr('id').replace('delete', '');
+    console.log("ID:", ID);
+    let itemIndex = cartList.findIndex(item => item.id == ID);
+    if (itemIndex !== -1 && cartList[itemIndex].quantity > 1) {
+        cartList[itemIndex].quantity -= 1;
+        updateCart();
+        updateQuantityDisplay(ID, cartList[itemIndex].quantity);
+    } else if (itemIndex !== -1 && cartList[itemIndex].quantity === 1) {
+        cartList.splice(itemIndex, 1);
+        updateCart();
+    }
+});
+
+function updateQuantityDisplay(ID, quantity) {
+    let quantityClass = `.numberFlower${ID}`;
+    $(quantityClass).text(quantity);
+}

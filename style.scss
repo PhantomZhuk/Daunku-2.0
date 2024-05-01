@@ -66,16 +66,35 @@
                 justify-content: space-between;
                 padding: 20px 20px;
 
-                i {
-                    background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
-                    cursor: pointer;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
+                .numberFlowerContainer {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
 
-                .fa-trash-can {
-                    align-self: flex-end;
+                    .numberFlowerBox {
+                        width: 90px;
+                        height: 30px;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 10px;
+                        box-shadow: 0 2px 2px #eee;
+                    }
+
+                    i {
+                        background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+                        cursor: pointer;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+    
+                    .fa-trash-can {
+                        align-self: flex-end;
+                        box-shadow: 0 5px 5px #eee;
+                    }
                 }
             }
 
