@@ -64,6 +64,8 @@ $('.wrap').click((e) => {
     }
     localStorage.setItem('cartList', JSON.stringify(cartList));
     $('.counter').text(JSON.parse(localStorage.getItem('cartList')).length);
+    $('.cartPopupContainer').empty();
+    showCartList(cartList);
 })
 
 
@@ -77,7 +79,7 @@ function showCartList(cartList) {
                     <h3>${el.name}</h3>
                     <i class="fa-solid fa-trash-can" id="delete${el.id}"></i>
                 </div>
-            </div
+            </div>
             `
         );
     }
@@ -104,4 +106,116 @@ $('.cartPopupContainer').on('click', '.fa-trash-can', (e) => {
         $('.cartPopupContainer').empty();
         showCartList(cartList);
     }
+});
+
+let theme = localStorage.getItem('theme') || 'light';
+
+if (theme === 'light') {
+    $('.fa-moon').hide();
+    $('.fa-sun').show();
+    $(`.secondPage`).css(`background-color`, `#fff`);
+    $(`.secondPage`).css(`color`, `#000`);
+    $(`.secondPage`).css(`background-color`, `#fff`);
+    $(`.plantItemInfo`).css(`background-color`, `#fff`);
+    $(`.plantItemInfo`).css(`box-shadow`, `0 2px 5px #eee`);
+    $(`.plantItem`).css(`background-color`, `#C1D0E4`);
+    $('.secondPage *').css('color', '#000');
+    $(`.threethPage`).css(`background-color`, `#fff`);
+    $('.threethPage *').css('color', '#000');
+    $(`.fourthPage`).css(`background-color`, `#fff`);
+    $('.fourthPage *').css('color', '#000');
+    $(`.while`).css(`color`, `#fff`);
+    $(`.cartPopup`).css(`background-color`, `#fff`);
+    $(`.cartPopup *`).css(`color`, `#000`)
+    $(`.cartInfo`).css(`background-color`, `#fff`);
+    $(`.cartInfo`).css(`box-shadow`, `0 2px 5px #eee`);
+    $(`.cart`).css(`background-color`, `#c1d0e4`);
+    $(`.menuPopup`).css(`background-color`, `#fff`);
+} else if (theme === 'dark') {
+    $('.fa-moon').show();
+    $('.fa-sun').hide();
+    $(`.secondPage`).css(`background-color`, `#333`);
+    $(`.plantItemInfo`).css(`background-color`, `#333`);
+    $(`.plantItemInfo`).css(`box-shadow`, `0 2px 5px #494e56`);
+    $(`.plantItem`).css(`background-color`, `#6a727d`);
+    $('.secondPage *').css('color', '#fff');
+    $(`.threethPage`).css(`background-color`, `#333`);
+    $('.threethPage *').css('color', '#fff');
+    $(`.fourthPage`).css(`background-color`, `#333`);
+    $('.fourthPage *').css('color', '#fff');
+    $(`.cartPopup`).css(`background-color`, `#333`);
+    $(`.cartPopup *`).css(`color`, `#fff`)
+    $(`.cart`).css(`background-color`, `#6a727d`);
+    $(`.cartInfo`).css(`background-color`, `#333`);
+    $(`.cartInfo`).css(`box-shadow`, `0 2px 5px #494e56`);
+    $(`.menuPopup`).css(`background-color`, `#333`);
+}
+
+$('.changeThemeBtns').click(function () {
+    if (theme === 'light') {
+        $('.fa-moon').show();
+        $('.fa-sun').hide()
+        $(`.secondPage`).css(`background-color`, `#333`);
+        $(`.plantItemInfo`).css(`background-color`, `#333`);
+        $(`.plantItemInfo`).css(`box-shadow`, `0 2px 5px #494e56`);
+        $(`.plantItem`).css(`background-color`, `#6a727d`);
+        $('.secondPage *').css('color', '#fff');
+        $(`.threethPage`).css(`background-color`, `#333`);
+        $('.threethPage *').css('color', '#fff');
+        $(`.fourthPage`).css(`background-color`, `#333`);
+        $('.fourthPage *').css('color', '#fff');
+        $(`.cartPopup`).css(`background-color`, `#333`);
+        $(`.cartPopup *`).css(`color`, `#fff`)
+        $(`.cart`).css(`background-color`, `#6a727d`);
+        $(`.cartInfo`).css(`background-color`, `#333`);
+        $(`.cartInfo`).css(`box-shadow`, `0 2px 5px #494e56`);
+        $(`.menuPopup`).css(`background-color`, `#333`);
+        localStorage.setItem('theme', 'dark');
+        theme = 'dark';
+    } else if (theme === 'dark') {
+        $('.fa-moon').hide();
+        $('.fa-sun').show();
+        $(`.secondPage`).css(`background-color`, `#fff`);
+        $(`.secondPage`).css(`color`, `#000`);
+        $(`.secondPage`).css(`background-color`, `#fff`);
+        $(`.plantItemInfo`).css(`background-color`, `#fff`);
+        $(`.plantItemInfo`).css(`box-shadow`, `0 2px 5px #eee`);
+        $(`.plantItem`).css(`background-color`, `#C1D0E4`);
+        $('.secondPage *').css('color', '#000');
+        $(`.threethPage`).css(`background-color`, `#fff`);
+        $('.threethPage *').css('color', '#000');
+        $(`.fourthPage`).css(`background-color`, `#fff`);
+        $('.fourthPage *').css('color', '#000');
+        $(`.while`).css(`color`, `#fff`);
+        $(`.cartPopup`).css(`background-color`, `#fff`);
+        $(`.cartPopup *`).css(`color`, `#000`)
+        $(`.cartInfo`).css(`background-color`, `#fff`);
+        $(`.cartInfo`).css(`box-shadow`, `0 2px 5px #eee`);
+        $(`.cart`).css(`background-color`, `#c1d0e4`);
+        $(`.menuPopup`).css(`background-color`, `#fff`);
+        localStorage.setItem('theme', 'light');
+        theme = 'light';
+    }
+});
+
+$(`.openMenuPopup`).click(() => {
+    $(`.menuPopup`).css(`left`, `0`);
+    setTimeout(() => {
+        $(`.wrap`).hide();
+    }, 1000);
+});
+
+$(`.closeMenuPopup`).click(() => {
+    $(`.menuPopup`).css(`left`, `-100%`);
+    $(`.wrap`).show();
+});
+
+$(`#shop`).click(() => {
+    $(`.menuPopup`).css(`left`, `-100%`);
+    $(`.wrap`).show();
+});
+
+$(`#home`).click(() => {
+    $(`.menuPopup`).css(`left`, `-100%`);
+    $(`.wrap`).show();
 });

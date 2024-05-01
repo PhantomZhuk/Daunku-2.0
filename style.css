@@ -49,7 +49,7 @@
   align-items: center;
   border-radius: 20px;
   background-color: #c1d0e4;
-  margin: 20px;
+  margin: 20px 0;
   padding: 0 0 0 10px;
 }
 .cartPopup .cartPopupContainer .cart .cartInfo {
@@ -79,6 +79,59 @@
 }
 .cartPopup .cartPopupContainer::-webkit-scrollbar {
   display: none;
+}
+
+.menuPopup {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: -100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  transition: 1s;
+  z-index: 5;
+}
+.menuPopup .menuHeader {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.menuPopup .menuHeader i {
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+}
+.menuPopup .menuMain {
+  width: 100%;
+  height: 90vh;
+}
+.menuPopup .menuMain ul {
+  width: 100%;
+  height: 90vh;
+  list-style: none;
+}
+.menuPopup .menuMain ul li {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+.menuPopup .menuMain ul li a {
+  text-decoration: none;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
 }
 
 .header {
@@ -162,6 +215,25 @@
   display: none;
   font-size: 20px;
   cursor: pointer;
+}
+.wrap .homePage .header .changeThemeBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+.wrap .homePage .header .changeThemeBtn .fa-sun {
+  font-size: 20px;
+  transition: 1s;
+}
+.wrap .homePage .header .changeThemeBtn .fa-moon {
+  display: none;
+  font-size: 20px;
+  transition: 1s;
 }
 .wrap .homePage .header .buy i {
   font-size: 21px;
@@ -1024,8 +1096,11 @@
     display: flex;
     order: 3;
   }
-  .wrap .homePage .header .buy {
+  .wrap .homePage .header .changeThemeBtn {
     order: 2;
+  }
+  .wrap .homePage .header .buy {
+    order: 3;
   }
   .wrap .homePage .header .buy .colo {
     margin-top: -5px;
