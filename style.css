@@ -21,6 +21,7 @@
 }
 .cartPopup .cartHeader {
   width: 100%;
+  height: 50px;
   display: flex;
   padding: 10px 20px;
   font-size: 32px;
@@ -34,9 +35,9 @@
 }
 .cartPopup .cartPopupContainer {
   width: 100%;
+  height: 83vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   overflow: auto;
   padding: 0 10px;
@@ -94,6 +95,56 @@
 .cartPopup .cartPopupContainer .cart img {
   height: 120px;
 }
+.cartPopup .footerCart {
+  width: 100%;
+  height: 10vh;
+  background-color: #4b5766;
+}
+.cartPopup .footerCart #my-form2 {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+}
+.cartPopup .footerCart #my-form2 input {
+  width: 140px;
+  color: #fff !important;
+  padding: 10px 0 10px 10px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #c1d0e4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #FFF;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-right: 10px;
+}
+.cartPopup .footerCart #my-form2 input::-moz-placeholder {
+  color: #fff;
+}
+.cartPopup .footerCart #my-form2 input::placeholder {
+  color: #fff;
+}
+.cartPopup .footerCart #my-form2 button {
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  border: none;
+  cursor: pointer;
+  color: #fff !important;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 14;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 .cartPopup .cartPopupContainer::-webkit-scrollbar {
   display: none;
 }
@@ -149,6 +200,40 @@
   display: flex;
   justify-content: center;
   font-size: 28px;
+}
+
+.popupFolower {
+  width: 300px;
+  height: 100px;
+  background-color: #fff;
+  position: fixed;
+  border-radius: 20px;
+  color: #000;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.8s;
+  box-shadow: 0 2px 2px #eee;
+}
+
+.popupOredr {
+  width: 300px;
+  height: 100px;
+  background-color: #fff;
+  position: fixed;
+  border-radius: 20px;
+  color: #000;
+  bottom: 50px;
+  left: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.8s;
+  box-shadow: 0 2px 2px #eee;
 }
 
 .header {
@@ -252,6 +337,9 @@
   font-size: 20px;
   transition: 1s;
 }
+.wrap .homePage .header .buy {
+  margin-bottom: 15px;
+}
 .wrap .homePage .header .buy i {
   font-size: 21px;
   color: #FFF;
@@ -261,9 +349,9 @@
   text-decoration: none;
 }
 .wrap .homePage .header .buy .colo {
-  position: absolute;
-  right: 109px;
-  top: 20px;
+  position: relative;
+  top: 12px;
+  left: 10px;
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -331,6 +419,7 @@
   font-weight: 700;
   line-height: normal;
   padding: 0 60px;
+  margin: 10px;
 }
 .wrap .homePage .container .centerblock p {
   color: #FFF;
@@ -340,7 +429,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
-  /* 36px */
+  margin: 10px;
 }
 .wrap .homePage .container .centerblock .poshuk input {
   display: flex;
@@ -353,6 +442,8 @@
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  color: #fff;
+  outline: none;
 }
 .wrap .homePage .container .centerblock .poshuk input::-moz-placeholder {
   color: #FFF;
@@ -813,22 +904,23 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 100px;
+  padding: 100px 100px 50px 100px;
 }
 .wrap .footer .topblock {
   width: 100%;
-  height: 35vh;
+  min-height: 35vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .wrap .footer .topblock .leftblock {
   width: 25%;
-  height: 30vh;
+  max-height: 30vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 30px 0;
+  align-items: center;
+  margin-bottom: 20px;
+  align-self: flex-start;
 }
 .wrap .footer .topblock .leftblock h2 {
   color: #FFF;
@@ -837,75 +929,79 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 10px;
 }
-.wrap .footer .topblock .leftblock .inputblock input {
-  display: flex;
+.wrap .footer .topblock .leftblock .inputblock {
   width: 100%;
+  max-height: 150px;
+}
+.wrap .footer .topblock .leftblock .inputblock #my-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .footer .topblock .leftblock .inputblock #my-form input {
+  display: flex;
+  width: 70%;
   padding: 14px 20px;
   align-items: flex-start;
-  border-radius: 50px;
+  justify-content: center;
+  border-radius: 50px 0 0 50px;
   border: 1px solid #FFF;
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-.wrap .footer .topblock .leftblock .inputblock input::-moz-placeholder {
+.wrap .footer .topblock .leftblock .inputblock #my-form input::-moz-placeholder {
   color: #FFF;
   font-family: Work Sans;
-  font-size: calc(6px + 0.5vw);
+  font-size: calc(10px + 0.5vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.wrap .footer .topblock .leftblock .inputblock input::placeholder {
+.wrap .footer .topblock .leftblock .inputblock #my-form input::placeholder {
   color: #FFF;
   font-family: Work Sans;
-  font-size: calc(6px + 0.5vw);
+  font-size: calc(10px + 0.5vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.wrap .footer .topblock .leftblock .inputblock button {
-  position: relative;
-  z-index: 2;
-  min-width: 100px;
-  min-height: 46px;
-  border-radius: 50px;
+.wrap .footer .topblock .leftblock .inputblock #my-form button {
+  width: 30%;
+  height: 45px;
+  border-radius: 0 50px 50px 0;
   background: var(--gradient2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
   border: none;
-  bottom: 46px;
-  left: 225px;
-}
-.wrap .footer .topblock .leftblock .inputblock button p {
+  cursor: pointer;
   color: #FFF;
   text-align: center;
   font-family: "Work Sans";
-  font-size: calc(6px + 0.6vw);
+  font-size: 14;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  top: 100px;
 }
 .wrap .footer .topblock .rightblock {
   width: 70%;
-  height: 40vh;
+  min-height: 40vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
 }
 .wrap .footer .topblock .rightblock .textblock {
-  width: 23%;
-  height: 30vh;
+  width: 200px;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 50px;
 }
 .wrap .footer .topblock .rightblock .textblock h2 {
   color: #FFF;
   font-family: "Work Sans";
-  font-size: calc(12px + 0.8vw);
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -915,25 +1011,24 @@
   color: #FFF;
   text-decoration: none;
   font-family: "Work Sans";
-  font-size: calc(8px + 0.5vw);
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
   /* 24px */
 }
 .wrap .footer .topblock .rightblock .textblock1 {
-  width: 23%;
-  height: 30vh;
+  width: 200px;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 100px;
 }
 .wrap .footer .topblock .rightblock .textblock1 h2 {
   color: #FFF;
   font-family: "Work Sans";
-  font-size: calc(12px + 0.8vw);
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -943,25 +1038,24 @@
   color: #FFF;
   text-decoration: none;
   font-family: "Work Sans";
-  font-size: calc(8px + 0.5vw);
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
   /* 24px */
 }
 .wrap .footer .topblock .rightblock .twxtblock2 {
-  width: 30%;
-  height: 30vh;
+  width: 200px;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 100px;
 }
 .wrap .footer .topblock .rightblock .twxtblock2 h2 {
   color: #FFF;
   font-family: "Work Sans";
-  font-size: calc(12px + 0.8vw);
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
@@ -971,7 +1065,7 @@
   color: #FFF;
   text-decoration: none;
   font-family: "Work Sans";
-  font-size: calc(7px + 0.5vw);
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -992,7 +1086,7 @@
   margin-top: 20px;
   color: #FFF;
   font-family: "Work Sans";
-  font-size: calc(10px + 0.7vw);
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

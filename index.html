@@ -29,6 +29,19 @@
         <div class="cartPopupContainer">
 
         </div>
+        <div class="footerCart">
+            <form id="my-form2" action="https://formspree.io/f/mwkgygrr" method="POST">
+                <input type="text" name="name" placeholder="Name"/>
+                <input type="number" name="phone" placeholder="Phone" maxlength="10"/>
+                <input type="hidden" name="list" id="cartList" />
+                <button id="my-form-button2">Send</button>
+                <p id="my-form-status2"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="popupOredr">
+
     </div>
 
     <div class="menuPopup">
@@ -47,6 +60,9 @@
         </div>
     </div>
 
+    <div class="popupFolower">
+
+    </div>
 
     <div class="wrap">
         <!-- homePage -->
@@ -102,10 +118,10 @@
                     <i class="fa-solid fa-moon changeThemeBtns"></i>
                 </div>
                 <div class="buy">
-                    <i class="fa-solid fa-bag-shopping"></i>
                     <div class="colo">
                         <p class="counter"></p>
                     </div>
+                    <i class="fa-solid fa-bag-shopping"></i>
                 </div>
             </div>
             <div class="container">
@@ -521,10 +537,12 @@
                 <div class="leftblock">
                     <h2>Newslatter</h2>
                     <div class="inputblock">
-                        <input type="text" placeholder="Enter your email">
-                        <button>
-                            <p>Subscribe</p>
-                        </button>
+                        <form id="my-form" action="https://formspree.io/f/xqkrnryr" method="POST">
+                            <input type="email" name="email" placeholder="Email" />
+                            <input type="hidden" name="text" id="textFolower" />
+                            <button id="my-form-button">Submit</button>
+                            <p id="my-form-status"></p>
+                        </form>
                     </div>
                 </div>
                 <div class="rightblock">

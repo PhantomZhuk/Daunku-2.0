@@ -19,6 +19,8 @@ let db = [
     }
 ];
 
+let cartListOredr = [];
+
 
 function showPlants(db) {
     for (let el of db) {
@@ -58,10 +60,8 @@ $('.wrap').click((e) => {
         let ID = (e.target.id).substring(3);
         let existingItemIndex = cartList.findIndex(item => item.id === parseInt(ID));
         if (existingItemIndex !== -1) {
-            // Якщо товар вже є у кошику, збільшуємо кількість
             cartList[existingItemIndex].quantity++;
         } else {
-            // Якщо товару немає у кошику, додаємо його
             let newItem = { ...db.find(item => item.id === parseInt(ID)), quantity: 1 };
             cartList.push(newItem);
         }
@@ -90,9 +90,27 @@ function showCartList(cartList) {
             </div>
             `
         );
+        updateCartItem(el.name, el.quantity);
+    }
+    $(`#cartList`).val(JSON.stringify(cartListOredr));
+}
+
+function updateCartItem(name, quantity) {
+    let existingItemIndex = cartListOredr.findIndex(function(item) {
+        return item.name === name;
+    });
+
+    if (existingItemIndex !== -1) {
+        cartListOredr[existingItemIndex].quantity = quantity;
+    } else {
+        cartListOredr.push({ name: name, quantity: quantity });
     }
 }
+
 showCartList(cartList);
+
+
+
 $(`.buy`).click(() => {
     $(`.cartPopup`).css(`right`, `0`)
     $('.cartPopupContainer').empty();
@@ -242,6 +260,7 @@ $('.cartPopupContainer').on('click', '.fa-plus', (e) => {
         cartList[itemIndex].quantity += 1;
         updateCart();
         updateQuantityDisplay(ID, cartList[itemIndex].quantity);
+        updateCartItem(cartList[ID].name, cartList[ID].quantity);
     }
 });
 
@@ -253,13 +272,97 @@ $('.cartPopupContainer').on('click', '.fa-minus', (e) => {
         cartList[itemIndex].quantity -= 1;
         updateCart();
         updateQuantityDisplay(ID, cartList[itemIndex].quantity);
+        updateCartItem(cartList[ID].name, cartList[ID].quantity);
     } else if (itemIndex !== -1 && cartList[itemIndex].quantity === 1) {
         cartList.splice(itemIndex, 1);
         updateCart();
+        updateCartItem(cartList[ID].name, cartList[ID].quantity);
     }
 });
 
 function updateQuantityDisplay(ID, quantity) {
     let quantityClass = `.numberFlower${ID}`;
     $(quantityClass).text(quantity);
+}
+
+$(`#textFolower`).val(`У вас новий підписник!`)
+
+let form = document.getElementById("my-form");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    let status = document.getElementById("my-form-status");
+    let data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            showPopupFollower(`Ви підписались на оновлення`)
+            form.reset()
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    showPopupFollower(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                    showPopupFollower(`Помилка`)
+                }
+            })
+        }
+    }).catch(error => {
+        showPopupFollower(`Помилка`)
+    });
+}
+form.addEventListener("submit", handleSubmit);
+
+function showPopupFollower(message) {
+    $(`.popupFolower`).css(`display`, `flex`);
+    $(`.popupFolower`).text(message);
+
+    setInterval(() => {
+        $(`.popupFolower`).css(`display`, `none`);
+    }, 3000);
+}
+
+let form2 = document.getElementById("my-form2");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status2");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form2.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            showPopupOrder(`Замовлення відправлено!`);
+            form2.reset()
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    showPopupOrder(data["errors"].map(error => error["message"]).join(", "));
+                } else {
+                    showPopupOrder(`Помилка!`);
+                }
+            })
+        }
+    }).catch(error => {
+        showPopupOrder(`Помилка!`);
+    });
+}
+form2.addEventListener("submit", handleSubmit)
+
+function showPopupOrder(message) {
+    $(`.popupOredr`).css(`display`, `flex`);
+    $(`.popupOredr`).text(message);
+
+    setInterval(() => {
+        $(`.popupOredr`).css(`display`, `none`);
+    }, 3000);
 }
