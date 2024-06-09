@@ -24,7 +24,7 @@ let cartListOredr = [];
 
 function showPlants(db) {
     for (let el of db) {
-        $('.flowerblock').append(`<div class='plantItem'>
+        $('.flowerblock').append(`<div class='plantItem' id="plantItem${el.id}">
         <img src='./img/${el.pic}' alt='plant'>
         <div class='plantItemInfo'>
             <h3>${el.name}</h3>
@@ -48,7 +48,6 @@ function showPlants(db) {
 }
 
 showPlants(db);
-
 
 let cartList = JSON.parse(localStorage.getItem('cartList')) || [];
 
@@ -96,7 +95,7 @@ function showCartList(cartList) {
 }
 
 function updateCartItem(name, quantity) {
-    let existingItemIndex = cartListOredr.findIndex(function(item) {
+    let existingItemIndex = cartListOredr.findIndex(function (item) {
         return item.name === name;
     });
 

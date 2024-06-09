@@ -37,7 +37,7 @@
 
     .cartPopupContainer {
         width: 100%;
-        height: 83vh;
+        height: 84vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -723,17 +723,21 @@
                 min-height: 500px;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                flex-wrap: wrap;
 
                 .plantItem {
-                    width: 300px;
+                    width: 280px;
                     min-height: 200px;
                     background-color: #C1D0E4;
-                    display: flex;
+                    display: none;
                     flex-direction: column;
                     align-items: center;
                     border-radius: 50px;
-                    margin: 10px;
+                    margin: 10px 10px 50px 10px;
+                }
+
+                #plantItem1, #plantItem2, #plantItem3 {
+                    display: flex;
                 }
 
                 .plantItemInfo {
@@ -1314,11 +1318,6 @@
     // homePage
     .header {
         padding: 0 30px;
-
-        .colo {
-            margin-top: 15px;
-            margin-right: -90px;
-        }
     }
 
 
